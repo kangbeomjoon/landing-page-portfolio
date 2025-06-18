@@ -33,7 +33,9 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-secondary/95 backdrop-blur-md shadow-lg"
+          : "bg-secondary/90"
       }`}
     >
       <div className="container-max section-padding">
@@ -80,7 +82,7 @@ const Header = () => {
 
         {/* 모바일 메뉴 */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200 py-4">
+          <div className="md:hidden bg-secondary border-t border-gray-300 py-4">
             <nav className="flex flex-col space-y-4">
               {menuItems.map((item) => (
                 <button

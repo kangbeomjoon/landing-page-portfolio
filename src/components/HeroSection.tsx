@@ -14,8 +14,18 @@ const HeroSection = () => {
     <section
       id="hero"
       className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-amber-800 via-orange-700 to-red-800"
+      style={{
+        backgroundImage:
+          'url("https://cdn.pixabay.com/photo/2022/06/10/05/32/biryani-platter-7253751_1280.jpg")',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      {/* 배경 패턴 */}
+      {/* 텍스트 가독성을 위한 최소 오버레이 */}
+      <div className="absolute inset-0 bg-black/30"></div>
+
+      {/* 추가 패턴 */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       </div>
