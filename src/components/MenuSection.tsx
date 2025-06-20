@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Star, Clock, Flame, X, MapPin, Users } from "lucide-react";
+import Image from "next/image";
 
 // 메뉴 아이템 타입 정의
 interface MenuItem {
@@ -402,16 +403,13 @@ const MenuSection = () => {
               >
                 {/* 메뉴 이미지 영역 */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={500}
+                    height={400}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    onError={(e) => {
-                      // 이미지 로드 실패 시 대체 이미지 표시
-                      const target = e.target as HTMLImageElement;
-                      target.src =
-                        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDUwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRkY4RTUzIi8+Cjx0ZXh0IHg9IjI1MCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCI+🍖</3RleHQ+Cjwvc3ZnPgo=";
-                    }}
+                    unoptimized
                   />
                   {item.isPopular && (
                     <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
@@ -520,10 +518,13 @@ const MenuSection = () => {
                       >
                         {/* 메뉴 이미지 영역 */}
                         <div className="relative h-48 overflow-hidden">
-                          <img
+                          <Image
                             src={item.image}
                             alt={item.name}
+                            width={500}
+                            height={400}
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            unoptimized
                           />
                           {item.isPopular && (
                             <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
@@ -626,10 +627,13 @@ const MenuSection = () => {
                   {/* 이미지 영역 */}
                   <div className="space-y-4">
                     <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden">
-                      <img
+                      <Image
                         src={selectedMenuItem.image}
                         alt={selectedMenuItem.name}
+                        width={500}
+                        height={400}
                         className="w-full h-full object-cover"
+                        unoptimized
                       />
                       {selectedMenuItem.isPopular && (
                         <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center">
